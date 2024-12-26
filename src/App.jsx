@@ -10,16 +10,16 @@ datadogRum.init({
   applicationId: `${app_id}`,
   clientToken: `${client_token}`,
   site: 'datadoghq.com',
-  service: 'quotes-generator',
-  env: 'dev',
-  version: '1.0.1',
+  service: 'e2e-quotes',
+  env: 'prod',
+  version: '1.0.0',
   sessionSampleRate: 100,
   sessionReplaySampleRate: 100,
   trackUserInteractions: true,
   trackResources: true,
   trackLongTasks: true,
   defaultPrivacyLevel: 'mask-user-input',
-  allowedTracingUrls: ["http://localhost:5173/"]
+  allowedTracingUrls: ["http://localhost:5173/", /http:\/\/.*\.localhost:5173/, (url) => url.startsWith("http://localhost:5173")]
 });
 
 function App() {

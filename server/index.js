@@ -1,3 +1,4 @@
+const tracer = require('../tracer');
 const express = require("express");
 const logger = require("../log");
 const quotesRoute = require("./routes/quotes");
