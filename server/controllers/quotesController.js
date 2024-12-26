@@ -12,6 +12,7 @@ const getRandomQuote = (_req, res, next) => {
   try {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     res.locals.quote = randomQuote;
+    logger.info(`Quote Generated: ${randomQuote}`);
     return next();
   } catch (error) {
     logger.error("An error occurred", {
