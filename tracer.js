@@ -1,5 +1,4 @@
-import tracer from 'dd-trace';
-tracer.init({
+const tracer = require('dd-trace').init({
     profiling: true,
     service: 'e2e-quotes',
     env: 'prod',
